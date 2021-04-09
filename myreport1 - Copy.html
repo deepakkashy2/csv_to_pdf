@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Test</title>
+	<style type="text/css" media="screen,print">
+  .break {
+    display: block;
+    clear: both;
+    page-break-after: always;
+  }
+  table{
+  font-size: 50px;
+}
+
+</style>
+</head>
+<body>{% for key,row in x.iterrows() %}
+    <table>
+        <thead>
+            <tr><th>Emplyee Information</th></tr>
+        </thead>
+        <tfoot>
+            <tr><td></td></tr>
+        </tfoot>
+        <tbody>
+		
+        <tr>
+          		   <td>Name:</td>
+				    <td>{{ row['name'] }}</td>
+        </tr>
+        <tr>
+            <td>Address:</td>
+			<td>{{ row['address'] }}</td>
+        </tr>
+        <!-- 500 more rows -->
+        <tr>
+            <td>Phone:</td>
+			 <td>{{ row['phone'] }}</td>
+			
+        </tr>
+		
+    </tbody>
+    </table>
+	<div class='break'></div>
+	{% endfor %}
+</body>
+</html>

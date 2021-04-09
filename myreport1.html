@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<title>Test</title>
+	<style type="text/css" media="screen,print">
+  .break {
+    display: block;
+    clear: both;
+    page-break-after: always;
+  }
+  table{
+  font-size: 25px;
+}
+.wrapdata{
+word-wrap: break-word;
+min-width: 160px;
+max-width: 160px;
+white-space: normal !important; // To consider whitespace.}
+
+</style>
+</head>
+<body>
+
+
+{% for key,row in x.iterrows() %}
+<h1>{{Header}}</h1>
+    <table class="table">
+        <tbody>
+		
+        <tr>
+          		   <td>Name:</td>
+				    <td class="wrapdata">{{ row['name'] }}</td>
+        </tr>
+        <tr>
+            <td>Address:</td>
+			<td class="wrapdata">{{ row['address'] }}</td>
+        </tr>
+        <!-- 500 more rows -->
+        <tr>
+            <td>Phone:</td>
+			 <td class="wrapdata">{{ row['phone'] }}</td>
+			
+        </tr>
+		
+    </tbody>
+    </table>
+	<div class='break'></div>
+	{% endfor %}
+
+</body>
+</html>
